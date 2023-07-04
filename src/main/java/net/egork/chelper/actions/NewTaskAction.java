@@ -1,6 +1,7 @@
 package net.egork.chelper.actions;
 
 import com.intellij.ide.actions.CreateElementActionBase;
+import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiDirectory;
@@ -32,6 +33,8 @@ public class NewTaskAction extends CreateElementActionBase {
     }
 
     public static PsiElement[] createTask(String s, PsiDirectory psiDirectory, Task template) {
+
+        PluginManager.getLogger().error("Test from crateTask");
         if (!FileUtilities.isJavaDirectory(psiDirectory)) {
             return PsiElement.EMPTY_ARRAY;
         }

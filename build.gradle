@@ -14,7 +14,7 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.7'
     implementation 'commons-lang:commons-lang:2.6'
     implementation 'org.jetbrains:annotations:19.0.0'
-    implementation 'org.json:json:20180130'
+    implementation 'org.json:json:20230618'
     implementation fileTree(dir: 'lib', include: ['*.jar'])
 }
 
@@ -24,7 +24,7 @@ java {
 }
 
 intellij {
-    version = '2021.2'
+    version = '2022.3'
     plugins = ['java']
 }
 

@@ -1,5 +1,6 @@
 package net.egork.chelper;
 
+import com.intellij.ide.plugins.PluginManager;
 import com.intellij.notification.NotificationType;
 import com.intellij.openapi.application.TransactionGuard;
 import com.intellij.openapi.components.ProjectComponent;
@@ -89,6 +90,7 @@ public class ChromeParser implements ProjectComponent {
                             }
                             Socket socket = serverSocket.accept();
                             try {
+
                                 BufferedReader reader = new BufferedReader(
                                         new InputStreamReader(socket.getInputStream(), "UTF-8"));
                                 while (!reader.readLine().isEmpty()) ;
@@ -98,6 +100,10 @@ public class ChromeParser implements ProjectComponent {
                                 while ((s = reader.readLine()) != null)
                                     builder.append(s).append('\n');
                                 final String page = builder.toString();
+
+//                                PluginManager.getLogger().error("Test from ChromeParser " + type);
+//                                PluginManager.getLogger().error("Test from ChromeParser " + page);
+
                                 TransactionGuard.getInstance().submitTransactionAndWait(new Runnable() {
                                     public void run() {
                                         if (TASK_PARSERS.containsKey(type)) {
