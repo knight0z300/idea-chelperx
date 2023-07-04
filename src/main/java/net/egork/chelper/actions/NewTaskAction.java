@@ -34,7 +34,7 @@ public class NewTaskAction extends CreateElementActionBase {
 
     public static PsiElement[] createTask(String s, PsiDirectory psiDirectory, Task template) {
 
-        PluginManager.getLogger().error("Test from crateTask");
+//        PluginManager.getLogger().error("Test from crateTask");
         if (!FileUtilities.isJavaDirectory(psiDirectory)) {
             return PsiElement.EMPTY_ARRAY;
         }
